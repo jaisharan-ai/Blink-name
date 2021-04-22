@@ -1,0 +1,45 @@
+const pin_t LED = D7;
+SYSTEM_THREAD(ENABLED);
+void setup() {
+    pinMode(LED,OUTPUT);
+
+}
+int unit=100;
+void new_char()
+{delay(unit*2);}
+void dot()
+{
+        digitalWrite(LED,HIGH);
+    delay(unit);
+    digitalWrite(LED,LOW);
+    delay(unit);
+}
+void dash()
+{
+   digitalWrite(LED,HIGH);
+    delay(unit*3);
+    digitalWrite(LED,LOW);
+    delay(unit);  
+}
+void loop() {
+ 
+   dot();dash();dash();dash();
+   new_char();
+   dot();dash();   //j
+    new_char();
+   dot();dot();   //a
+    new_char();
+   dot();dash();  //i
+    new_char();
+   dot();dot();dot();//s
+    new_char();
+    dot();dot();dot();dot();//h
+    new_char();
+     dot();dash();//a
+      new_char();
+   dot();dash();dot();//r
+   new_char();
+   dot();dash();//a
+      new_char();
+      dash();dot();//n
+}
